@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Juego Explota Burbujas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="welcome-screen" id="welcome-screen">
+        <h1>QUIERO JUGAR A UN JUEGO...</h1>
+        <button id="start-button">Empezar</button>
+    </div>
+    <div class="container hidden" id="game-container">
+        <div id="score-board">
+            <div>Tiempo: <span id="timer">60</span> segundos</div>
+            <div>Puntos: <span id="score">0</span></div>
+        </div>
+        <div id="bubble-wrap"></div>
+        <div id="message" class="hidden"></div>
+    </div>
+    <audio id="pop-sound" src="sounds/pop-sound.wav"></audio>
+    <script src="script.js"></script>
+</body>
+</html>

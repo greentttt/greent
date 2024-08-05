@@ -1,0 +1,152 @@
+/* Estilo básico para el cuerpo del documento */
+body {
+    font-family: Impact, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #000;
+    color: white;
+    margin: 0;
+    flex-direction: column;
+    padding: 10px;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+/* Estilo de la pantalla de bienvenida */
+.welcome-screen {
+    text-align: center;
+    width: 100%;
+    max-width: 90%;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.welcome-screen h1 {
+    color: white;
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+#welcome-screen button {
+    font-size: 1.5em;
+    padding: 0.8em 1.2em;
+    color: #fff;
+    background-color: #4caf50;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+#welcome-screen button:hover {
+    background-color: #45a049;
+}
+
+/* Estilo del contenedor del juego */
+.container {
+    text-align: center;
+    width: 100%;
+    max-width: 90%;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 1em 0;
+}
+
+/* Estilo del tablero de puntuación */
+#score-board {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto 1em auto;
+    color: white;
+}
+
+/* Estilo del área de las burbujas */
+#bubble-wrap {
+    display: grid;
+    gap: 10px;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+/* Estilo de las burbujas */
+.bubble {
+    width: 100%;
+    aspect-ratio: 1;
+    background-image: url('images/bubble-before.png'); /* Imagen antes de explotar */
+    background-size: cover;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+    max-width: 60px;
+    max-height: 60px;
+    margin: 0 auto;
+}
+
+/* Estilo para burbujas que han explotado */
+.bubble.popped {
+    background-image: url('images/bubble-after.png'); /* Imagen después de explotar */
+}
+
+/* Estilo del mensaje final */
+#message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    font-size: 1.5em;
+    display: none;
+    max-width: 90%;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+/* Clase para mostrar el mensaje */
+#message.show {
+    display: block;
+}
+
+/* Clase oculta */
+.hidden {
+    display: none;
+}
+
+/* Media Query para pantallas más pequeñas */
+@media (max-width: 600px) {
+    #bubble-wrap {
+        grid-template-columns: repeat(auto-fit, minmax(30px, 1fr));
+    }
+
+    .bubble {
+        max-width: 50px;
+        max-height: 50px;
+        font-size: 1em;
+    }
+
+    #welcome-screen button {
+        font-size: 1.2em;
+        padding: 0.7em 1em;
+    }
+
+    #score-board {
+        max-width: 100%;
+    }
+}
+
